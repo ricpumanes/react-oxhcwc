@@ -1,0 +1,31 @@
+.slider {
+  display: flex;
+  position: relative;
+
+  &__container {
+    display: flex;
+    padding: 0 55px;
+    transition: transform 300ms ease 100ms;
+    z-index: 3;
+    width: 100%;
+  }
+
+  & .item:hover .show-details-button {
+    opacity: 1;
+  }
+
+  // the selected item
+  & .item--active {
+    transform: scale(1.5) !important;
+  }
+
+  // the item before the selected item
+  & .item {
+    transform: translateX(-25%);
+  }
+
+  // the item after the selected item
+  & .item--active ~ .item {
+    transform: translateX(25%);
+  }
+}
