@@ -3,10 +3,10 @@ import cx from "classnames";
 import SliderContext from "./context";
 import "./Item.scss";
 
-const Item = ({ movie }) => (
+const Item = ({ video }) => (
   <SliderContext.Consumer>
     {({ onSelectSlide, currentSlide, elementRef }) => {
-      const isActive = currentSlide && currentSlide.id === movie.id;
+      const isActive = currentSlide && currentSlide.id === video.id;
 
       return (
         <div
@@ -14,9 +14,9 @@ const Item = ({ movie }) => (
           className={cx("item", {
             "item--active": isActive
           })}
-          onClick={() => onSelectSlide(movie)}
+          onClick={() => onSelectSlide(video)}
         >
-          <img src={movie.image} alt="" />
+          <img src={video.image} alt="" />
         </div>
       );
     }}

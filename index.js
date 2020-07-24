@@ -26,7 +26,11 @@ const dummyVideos = Array.from({ length: 15 }, (i, j) => ({
 const App = () => {
    return (
       <div>
-        <Slider />
+        <Slider>
+          {dummyVideos.map(video => (
+            <Slider.Item video={video} key={video.id} />
+          ))}
+        </Slider>
       </div>
     );
 }
